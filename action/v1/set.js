@@ -39,11 +39,9 @@ module.exports = {
   },
   mock_input: {},
   execute: async function (input, output) {
-    const redis = require('redis');
 
-    const client = redis.createClient({
-      url: `redis://${input.auth.username}:${input.auth.password}@${input.auth.host}:${input.auth.port}`
-    });
+    const { createRedisClient } = require('../../common/redisClient');
+    const client = createRedisClient(input.auth);
 
     try {
       await client.connect();
@@ -57,7 +55,7 @@ module.exports = {
     } catch (err) {
       output(err);
     } finally {
-      if (client.isOpen) { 
+      if (client.isOpen) {
         await client.disconnect();
       }
     }
