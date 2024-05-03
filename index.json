@@ -1,0 +1,19 @@
+{
+  "name": "sttlab_redis_demo",
+  "description": "sttlab Redis connector",
+  "triggers": [],
+  "actions": [
+    "/v1/hgetall",
+    "/v1/hset",
+    "/v1/set",
+    "/v1/get",
+    "/v1/hdel",
+    "/v1/del"
+  ],
+  "version": 1,
+  "auth_type": "custom",
+  "doc_link": "",
+  "appId": "a3fe5cb0-a47b-4573-8018-a334a71dc6f7",
+  "guid": "ca8541af-755c-4c8a-92f7-52f636dd4528",
+  "connectionUid": "sttlab-redis-demo-E0-WlY9mO"
+}
